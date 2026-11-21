@@ -261,3 +261,4 @@ main.page section.block:first-child { padding-top: 72px; }
 .degree .school { font-weight: 600; color: var(--ink); margin-bottom: 10px; }
 .degree p { margin: 0 0 14px; color: var(--muted); max-width: 66ch; }
 @media (max-width: 620px) { .degree { grid-template-columns: 1fr; gap: 8px; padding: 22px; } .degree .yr span { display: inline; margin-left: 8px; } .explore a.wide { grid-column: auto; } }
+.degree .major { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin: 2px 0 6px; }
