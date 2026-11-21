@@ -262,3 +262,5 @@ main.page section.block:first-child { padding-top: 72px; }
 .degree p { margin: 0 0 14px; color: var(--muted); max-width: 66ch; }
 @media (max-width: 620px) { .degree { grid-template-columns: 1fr; gap: 8px; padding: 22px; } .degree .yr span { display: inline; margin-left: 8px; } .explore a.wide { grid-column: auto; } }
 .degree .major { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin: 2px 0 6px; }
+.roles-open { list-style: none; margin: -12px 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
+.roles-open li { border: 1px solid rgba(217,180,90,0.45); color: var(--night-text); border-radius: 999px; padding: 6px 14px; font-size: 14.5px; }
