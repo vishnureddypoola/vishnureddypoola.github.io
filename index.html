@@ -4,259 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vishnu Poola Portfolio</title>
-<meta name="description" content="Vishnu Poola, Healthcare Data & AI Engineer in Redmond, WA. Microsoft Fabric, Databricks, FHIR, X12 claims, machine learning and agentic AI for healthcare.">
-<meta property="og:title" content="Vishnu Poola, Healthcare Data & AI Engineer">
-<meta property="og:description" content="From raw clinical feeds to decisions care teams trust.">
+<meta name="description" content="Vishnu Poola, Data Engineer and PhD researcher in AI, Redmond, WA. Microsoft Fabric, Databricks, FHIR, X12 claims, machine learning and agentic AI for healthcare.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* Layout idea: an editorial "case file" for a healthcare engineer. A dark hero whose canvas shows raw
-   records refined through Bronze, Silver and Gold into decisions; then light editorial sections:
-   work as a verb (capabilities), work as a noun (projects), principles, journey, experience, contact. */
-:root {
-  --ink: #0d2230;
-  --muted: #566a78;
-  --paper: #f3f6f5;
-  --surface: #ffffff;
-  --line: #d6e0e3;
-  --accent: #0c7480;
-  --accent-soft: #dff0f0;
-  --night: #081923;
-  --night-2: #0f2735;
-  --night-text: #e8f1f3;
-  --night-muted: #93abb7;
-  --bronze: #c07a43;
-  --silver: #aebbc4;
-  --gold: #d9b45a;
-  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ink: #e5eef1; --muted: #9bb0bb; --paper: #0b1820; --surface: #11222c; --line: #223844;
-    --accent: #5cc3c9; --accent-soft: #123138; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --ink: #e5eef1; --muted: #9bb0bb; --paper: #0b1820; --surface: #11222c; --line: #223844;
-  --accent: #5cc3c9; --accent-soft: #123138; color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.65; }
-a { color: var(--accent); }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.15; }
-.wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-.mono { font-family: var(--font-mono); }
-.kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
-
-/* ---------- Header ---------- */
-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--night) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.07); }
-.nav { max-width: 1160px; margin: 0 auto; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-.brand { color: var(--night-text); text-decoration: none; font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
-.brand em { color: var(--gold); font-style: italic; }
-.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; flex-wrap: wrap; }
-.nav ul a { color: var(--night-muted); text-decoration: none; font-size: 14.5px; font-weight: 500; }
-.nav ul a:hover { color: var(--night-text); }
-
-/* ---------- Hero ---------- */
-.hero { background: radial-gradient(1200px 500px at 85% -10%, #12405a 0%, transparent 60%), var(--night); color: var(--night-text); padding: 80px 0 0; overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: center; }
-.hero .kicker { color: var(--gold); }
-.hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.02em; margin: 18px 0 22px; }
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero .lead { color: var(--night-muted); font-size: 19px; max-width: 54ch; margin: 0 0 32px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid transparent; transition: transform .15s ease, background .15s ease; }
-.btn:hover { transform: translateY(-1px); }
-.btn.gold { background: var(--gold); color: var(--night); }
-.btn.ghost { border-color: rgba(255,255,255,0.25); color: var(--night-text); }
-.btn.ink { background: var(--ink); color: var(--paper); }
-.btn.line { border-color: var(--line); color: var(--ink); }
-
-.portrait { position: relative; }
-.portrait .frame { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; position: relative; background: linear-gradient(160deg, #18435a, #0b2433); border: 1px solid rgba(255,255,255,0.12); }
-.portrait .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.portrait .initials { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 120px; color: rgba(217,180,90,0.85); font-style: italic; }
-.portrait figcaption { position: absolute; left: -24px; bottom: 28px; background: var(--surface); color: var(--ink); border-radius: 12px; padding: 14px 18px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); max-width: 260px; }
-.portrait figcaption strong { display: block; font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.25; }
-.portrait figcaption span { font-size: 13px; color: var(--muted); }
-.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.badge { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
-
-/* Data-flow band */
-.flow { margin-top: 64px; position: relative; border-top: 1px solid rgba(255,255,255,0.08); }
-.flow canvas { display: block; width: 100%; height: 220px; }
-.flow-labels { position: absolute; inset: 0; display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr 1.1fr; pointer-events: none; }
-.flow-labels div { border-left: 1px dashed rgba(255,255,255,0.08); padding: 14px 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--night-muted); }
-.flow-labels div:first-child { border-left: 0; }
-.flow-labels b { display: block; font-weight: 500; color: var(--night-text); font-size: 13px; }
-.flow-labels .bz b { color: var(--bronze); } .flow-labels .sv b { color: var(--silver); } .flow-labels .gd b { color: var(--gold); }
-
-/* Ticker */
-.ticker { background: var(--night-2); color: var(--night-muted); border-top: 1px solid rgba(255,255,255,0.06); overflow: hidden; white-space: nowrap; }
-.ticker .track { display: inline-flex; gap: 48px; padding: 14px 0; animation: scroll 42s linear infinite; font-family: var(--font-mono); font-size: 13.5px; }
-.ticker span::before { content: "◆"; color: var(--gold); margin-right: 14px; font-size: 9px; vertical-align: 2px; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ---------- Stats ---------- */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
-.stat { padding: 34px 24px; border-left: 1px solid var(--line); }
-.stat:first-child { border-left: 0; padding-left: 0; }
-.stat strong { display: block; font-family: var(--font-display); font-size: 48px; font-weight: 500; line-height: 1; letter-spacing: -0.02em; }
-.stat span { color: var(--muted); font-size: 14.5px; }
-
-/* ---------- Sections ---------- */
-section.block { padding: 104px 0 0; }
-.head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: end; margin-bottom: 44px; }
-.head h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(34px, 4.4vw, 52px); letter-spacing: -0.02em; margin-top: 12px; }
-.head h2 em { font-style: italic; color: var(--accent); }
-.head p { color: var(--muted); margin: 0; max-width: 60ch; }
-
-/* Work (verb) */
-.verbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-.verb { background: var(--surface); padding: 28px 24px 26px; display: flex; flex-direction: column; gap: 12px; }
-.verb .n { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
-.verb h3 { font-family: var(--font-display); font-size: 26px; font-weight: 500; }
-.verb p { margin: 0; color: var(--muted); font-size: 15.5px; }
-.verb .tools { margin-top: auto; font-family: var(--font-mono); font-size: 12.5px; color: var(--accent); }
-
-/* Work (noun) */
-.cascade { background: var(--night); color: var(--night-text); border-radius: 20px; padding: 36px 36px 32px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; }
-.cascade h3 { font-family: var(--font-display); font-weight: 500; font-size: 30px; margin-bottom: 10px; }
-.cascade p { color: var(--night-muted); margin: 0 0 12px; }
-.cascade svg { width: 100%; height: auto; display: block; }
-.cascade svg text { font-family: var(--font-body); }
-
-.project { display: grid; grid-template-columns: 88px 1fr 220px; gap: 28px; padding: 34px 0; border-top: 1px solid var(--line); align-items: start; }
-.project:last-of-type { border-bottom: 1px solid var(--line); }
-.project .idx { font-family: var(--font-display); font-size: 56px; line-height: 0.9; color: var(--accent); font-style: italic; }
-.project h3 { font-family: var(--font-display); font-weight: 500; font-size: 30px; letter-spacing: -0.01em; }
-.project .tagline { font-family: var(--font-display); font-style: italic; color: var(--muted); font-size: 20px; margin: 6px 0 12px; }
-.project p { margin: 0 0 14px; max-width: 64ch; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { font-family: var(--font-mono); font-size: 12.5px; padding: 3px 9px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
-.side { display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--muted); }
-.side dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
-.side dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-.side dd { margin: 0; color: var(--ink); }
-.pill { align-self: start; font-size: 12.5px; font-weight: 600; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
-.pill.live { background: var(--gold); border-color: var(--gold); color: var(--night); }
-
-/* Principles */
-.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.principle { border-top: 3px solid var(--accent); padding-top: 20px; }
-.principle blockquote { margin: 0 0 14px; font-family: var(--font-display); font-size: 26px; line-height: 1.3; font-weight: 500; }
-.principle p { margin: 0; color: var(--muted); font-size: 15.5px; }
-
-/* Journey */
-.journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
-.journey::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, var(--bronze), var(--silver) 50%, var(--gold)); }
-.journey li { position: relative; padding: 36px 18px 0 0; }
-.journey li::before { content: ""; position: absolute; top: 3px; left: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 3px solid var(--accent); }
-.journey li:last-child::before { background: var(--gold); border-color: var(--gold); }
-.journey .stage { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.journey h3 { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin: 6px 0 8px; }
-.journey p { margin: 0; font-size: 15px; color: var(--muted); }
-
-/* Experience */
-.cv { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; }
-.roles { list-style: none; margin: 0; padding: 0; }
-.roles li { padding: 22px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 140px 1fr; gap: 20px; }
-.roles li:last-child { border-bottom: 1px solid var(--line); }
-.roles .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 4px; }
-.roles h3 { font-size: 18px; font-weight: 600; font-family: var(--font-body); }
-.roles .org { color: var(--accent); font-weight: 500; font-size: 15px; }
-.roles p { margin: 6px 0 0; color: var(--muted); font-size: 15.5px; }
-.creds { display: flex; flex-direction: column; gap: 14px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
-.card h3 { font-family: var(--font-mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); font-weight: 500; margin-bottom: 12px; }
-.card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.card li strong { display: block; font-weight: 600; }
-.card li span { color: var(--muted); font-size: 14.5px; }
-
-/* Contact */
-.contact { margin: 110px 0 0; background: var(--night); color: var(--night-text); border-radius: 24px; padding: 64px 56px; position: relative; overflow: hidden; }
-.contact::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(217,180,90,0.25), transparent 65%); }
-.contact h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(34px, 5vw, 60px); letter-spacing: -0.02em; max-width: 16ch; position: relative; z-index: 1; }
-.contact h2 em { font-style: italic; color: var(--gold); }
-.contact p { color: var(--night-muted); max-width: 54ch; margin: 18px 0 28px; position: relative; z-index: 1; }
-.contact .actions { position: relative; z-index: 1; }
-
-footer { padding: 40px 0 48px; color: var(--muted); font-size: 14px; }
-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-  .hero-grid, .head, .cascade, .cv { grid-template-columns: 1fr; }
-  .hero-grid { gap: 40px; }
-  .portrait { max-width: 380px; }
-  .portrait figcaption { left: 16px; }
-  .verbs { grid-template-columns: repeat(2, 1fr); }
-  .principles { grid-template-columns: 1fr; }
-  .project { grid-template-columns: 64px 1fr; }
-  .project .side { grid-column: 2; }
-  .journey { grid-template-columns: 1fr; }
-  .journey::before { left: 8px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; background: linear-gradient(180deg, var(--bronze), var(--silver) 50%, var(--gold)); }
-  .journey li { padding: 0 0 28px 40px; }
-  .journey li::before { top: 4px; left: 0; }
-  .flow-labels div:nth-child(2), .flow-labels div:nth-child(4) { visibility: hidden; }
-}
-@media (max-width: 620px) {
-  .wrap, .nav { padding-left: 18px; padding-right: 18px; }
-  .nav ul { gap: 14px; }
-  .nav ul li:nth-child(3), .nav ul li:nth-child(4) { display: none; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .stat { padding: 24px 16px; }
-  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
-  .stat strong { font-size: 38px; }
-  .verbs { grid-template-columns: 1fr; }
-  .project { grid-template-columns: 1fr; gap: 12px; }
-  .project .side { grid-column: auto; }
-  .project .idx { font-size: 44px; }
-  .roles li { grid-template-columns: 1fr; gap: 4px; }
-  .contact { padding: 44px 26px; }
-  .cascade { padding: 26px 22px; }
-  .flow canvas { height: 170px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .ticker .track { animation: none; }
-  .btn { transition: none; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <nav class="nav" aria-label="Main">
-    <a class="brand" href="#top">Vishnu <em>Poola</em></a>
+    <a class="brand" href="index.html">Vishnu <em>Poola</em></a>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#principles">Approach</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="approach.html">Approach</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main id="top">
-
   <!-- ===== Hero ===== -->
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="kicker">Healthcare Data &amp; AI Engineer · Redmond, WA</div>
+        <div class="kicker">Data Engineer · PhD Researcher in AI · Redmond, WA</div>
         <h1>From raw clinical feeds to <em>decisions care teams trust.</em></h1>
-        <p class="lead">Over 10 years in healthcare data, starting in hospital management and clinical trials. Today I build the pipelines, models and AI agents that turn FHIR records and insurance claims into work that nurses, care managers and billers can act on.</p>
+        <p class="lead">Over 10 years in healthcare and enterprise data, from hospital management and clinical trials to Microsoft Fabric and Databricks. Now I'm pursuing a PhD in Artificial Intelligence, focused on healthcare, and building a portfolio of pipelines, models and AI agents that turn FHIR records and claims into decisions care teams can act on.</p>
         <div class="actions">
-          <a class="btn gold" href="#work">Explore my work</a>
+          <a class="btn gold" href="work.html">Explore my work</a>
           <a class="btn ghost" href="https://github.com/vishnureddypoola">GitHub</a>
           <!-- TODO: upload resume.pdf to the repo, then uncomment:
           <a class="btn ghost" href="resume.pdf">Resume</a> -->
@@ -270,7 +48,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         </div>
         <figcaption>
           <strong>Vishnuvardhan Reddy Poola</strong>
-          <span>Fabric · Databricks · FHIR · Agentic AI</span>
+          <span>Data Engineer · PhD in AI (in progress)</span>
           <div class="badges"><span class="badge">DP-700</span><span class="badge">Databricks GenAI</span><span class="badge">Claude Associate</span><span class="badge">SAS Base</span></div>
         </figcaption>
       </figure>
@@ -305,269 +83,59 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
     </div>
   </div>
 
-  <!-- ===== Work (verb) ===== -->
-  <section class="block wrap" id="work" aria-labelledby="verb-title">
-    <div class="head">
-      <div>
-        <div class="kicker">Work, the verb</div>
-        <h2 id="verb-title">What I <em>do</em></h2>
-      </div>
-      <p>Four kinds of work, one goal: healthcare data that is correct, explainable and used. Each one is backed by a project below.</p>
-    </div>
-    <div class="verbs">
-      <article class="verb">
-        <span class="n">01 · Engineer</span>
-        <h3>Pipelines</h3>
-        <p>Medallion lakehouses that parse FHIR and X12, match patients across systems, and stop bad data before it reaches a report.</p>
-        <span class="tools">Fabric · PySpark · Delta</span>
-      </article>
-      <article class="verb">
-        <span class="n">02 · Predict</span>
-        <h3>Models</h3>
-        <p>Clinical risk models with leakage-safe features, plain-English explanations and fairness checks across patient groups.</p>
-        <span class="tools">Databricks · MLflow · SHAP</span>
-      </article>
-      <article class="verb">
-        <span class="n">03 · Automate</span>
-        <h3>Agents</h3>
-        <p>AI agents that gather evidence through tools, cite every fact, and leave the final decision to a person.</p>
-        <span class="tools">LangGraph · MCP · RAG</span>
-      </article>
-      <article class="verb">
-        <span class="n">04 · Deliver</span>
-        <h3>Decision tools</h3>
-        <p>Dashboards and apps that rank the work for today and record what people did, so outcomes can be measured.</p>
-        <span class="tools">Power BI · Fabric Apps</span>
-      </article>
-    </div>
+  <section class="wrap shloka-band" aria-label="Guiding verse from the Bhagavad Gita">
+    <figure class="shloka">
+      <blockquote>
+        <p class="deva" lang="sa">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥</p>
+        <p class="translit"><i>Karmaṇy-evādhikāras te mā phaleṣu kadācana,<br>mā karma-phala-hetur bhūr mā te saṅgo ’stv akarmaṇi.</i></p>
+        <p class="meaning">You have a right to your work, but never to its fruits. Let the results not be your motive, and never turn away from doing your work.</p>
+      </blockquote>
+      <figcaption>Bhagavad Gita 2.47 · the verse I work by</figcaption>
+    </figure>
   </section>
 
-  <!-- ===== Work (noun) ===== -->
-  <section class="block wrap" aria-labelledby="noun-title">
+  <section class="block wrap" aria-labelledby="ex-title">
     <div class="head">
       <div>
-        <div class="kicker">Work, the noun</div>
-        <h2 id="noun-title">What I'm <em>building</em></h2>
+        <div class="kicker">Explore</div>
+        <h2 id="ex-title">Where to <em>start</em></h2>
       </div>
-      <p>Five projects for CascadeCare, a fictional regional health system. They share one lakehouse and one set of synthetic patients, so together they work like a real healthcare AI platform.</p>
+      <p>Pick a page. Each one opens on its own, so you can go straight to what you care about.</p>
     </div>
-
-    <div class="cascade">
-      <div>
-        <h3>The CascadeCare platform</h3>
-        <p>Synthetic clinical and claims data flows into one governed lakehouse. Every other project reads from its Gold layer, and the readmission model writes its scores back.</p>
-        <p class="mono" style="font-size:13px;color:var(--gold);margin:0">100% synthetic data (Synthea) · no real patient data</p>
-      </div>
-      <svg viewBox="0 0 560 250" role="img" aria-label="Synthea data flows into the Fabric lakehouse, which feeds the care manager app, readmission model, denial agent and notes extractor.">
-        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93abb7"/></marker></defs>
-        <g fill="none" stroke="#93abb7" stroke-width="1.3">
-          <path d="M112 125H146" marker-end="url(#ar)"/>
-          <path d="M296 125H322M322 31V219"/>
-          <path d="M322 31H346" marker-end="url(#ar)"/><path d="M322 94H346" marker-end="url(#ar)"/>
-          <path d="M322 157H346" marker-end="url(#ar)"/><path d="M322 219H346" marker-end="url(#ar)"/>
-        </g>
-        <rect x="4" y="98" width="108" height="54" rx="8" fill="#0f2735" stroke="#2a4656"/>
-        <text x="58" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="#e8f1f3">Synthea</text>
-        <text x="58" y="139" text-anchor="middle" font-size="11" fill="#93abb7">FHIR + claims</text>
-        <rect x="148" y="72" width="148" height="106" rx="10" fill="#0f2735" stroke="#d9b45a" stroke-width="1.5"/>
-        <text x="222" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#e8f1f3">P1 Lakehouse</text>
-        <rect x="164" y="112" width="36" height="10" rx="3" fill="#c07a43"/><rect x="204" y="112" width="36" height="10" rx="3" fill="#aebbc4"/><rect x="244" y="112" width="36" height="10" rx="3" fill="#d9b45a"/>
-        <text x="222" y="150" text-anchor="middle" font-size="11" fill="#93abb7">Bronze · Silver · Gold</text>
-        <text x="222" y="166" text-anchor="middle" font-size="11" fill="#93abb7">quality gate</text>
-        <g font-size="12.5" fill="#e8f1f3" font-weight="600">
-          <rect x="348" y="10" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="36">P2 Care Manager</text>
-          <rect x="348" y="73" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="99">P3 Readmission model</text>
-          <rect x="348" y="136" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="162">P4 Denial appeal agent</text>
-          <rect x="348" y="198" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="224">P5 Notes to FHIR</text>
-        </g>
-      </svg>
-    </div>
-
-    <article class="project">
-      <div class="idx">01</div>
-      <div>
-        <h3>FHIR and X12 claims lakehouse</h3>
-        <div class="tagline">Two languages of healthcare, one source of truth.</div>
-        <p>Parses FHIR R4 bundles and X12 837/835 claims, matches each patient across clinical and billing records, and quarantines bad records through config-driven rules. If more than 5% of records fail, the pipeline stops before Gold and raises an alert.</p>
-        <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">PySpark</span><span class="tag">FHIR R4</span><span class="tag">X12 EDI</span><span class="tag">Data quality</span></div>
-      </div>
-      <div class="side">
-        <span class="pill live">In progress</span>
-        <dl><dt>Target</dt><dd>Dec 2026</dd><dt>Proves</dt><dd>Interoperability, quality engineering</dd></dl>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="idx">02</div>
-      <div>
-        <h3>Diabetes Care Manager</h3>
-        <div class="tagline">A dashboard shows the problem. An app lets someone fix it.</div>
-        <p>An executive Power BI report on HbA1c control and claim denials, plus a Fabric App that ranks diabetic patients for outreach, explains why each one is on the list, and records every call back into the KPIs.</p>
-        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Fabric Apps</span><span class="tag">GraphQL</span><span class="tag">Row-level security</span></div>
-      </div>
-      <div class="side">
-        <span class="pill">Planned</span>
-        <dl><dt>Target</dt><dd>Jan 2027</dd><dt>Proves</dt><dd>Product thinking, closed-loop analytics</dd></dl>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="idx">03</div>
-      <div>
-        <h3>Diabetic readmission risk model</h3>
-        <div class="tagline">A score is only useful if a care manager knows why.</div>
-        <p>A 30-day readmission model on Databricks with point-in-time features, SHAP reasons for every patient and a fairness audit. A Lakeflow Job promotes a new model only when it passes an accuracy and fairness gate.</p>
-        <div class="tags"><span class="tag">Databricks</span><span class="tag">MLflow</span><span class="tag">Unity Catalog</span><span class="tag">SHAP</span><span class="tag">Fairlearn</span></div>
-      </div>
-      <div class="side">
-        <span class="pill">Planned</span>
-        <dl><dt>Target</dt><dd>Jan 2027</dd><dt>Proves</dt><dd>MLOps, responsible AI</dd></dl>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="idx">04</div>
-      <div>
-        <h3>Claims denial appeal agent</h3>
-        <div class="tagline">The agent does the paperwork. The biller makes the call.</div>
-        <p>Reads an 835 denial, gathers evidence from FHIR through an MCP server, checks the payer policy and drafts an appeal. Every fact must cite a record or policy, invented references are caught, and a person approves every letter.</p>
-        <div class="tags"><span class="tag">Agentic AI</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Evaluation</span></div>
-      </div>
-      <div class="side">
-        <span class="pill">Planned</span>
-        <dl><dt>Target</dt><dd>Feb 2027</dd><dt>Proves</dt><dd>Agent design, measurable AI</dd></dl>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="idx">05</div>
-      <div>
-        <h3>Clinical notes to FHIR</h3>
-        <div class="tagline">Measured against an answer key, not a feeling.</div>
-        <p>Turns free-text notes into FHIR Conditions, Medications and HbA1c results. Because the notes are generated from known data, every extraction is scored for precision, recall, negation errors and cost per note.</p>
-        <div class="tags"><span class="tag">Generative AI</span><span class="tag">Structured output</span><span class="tag">SNOMED CT</span><span class="tag">LOINC</span></div>
-      </div>
-      <div class="side">
-        <span class="pill">Planned</span>
-        <dl><dt>Target</dt><dd>Mar 2027</dd><dt>Proves</dt><dd>LLM rigor, clinical terminology</dd></dl>
-      </div>
-    </article>
+    <nav class="explore" aria-label="Site sections">
+      <a class="feature" href="work.html">
+        <span class="n">01 · Work</span>
+        <h3>CascadeCare: five connected projects</h3>
+        <p>A healthcare AI platform built on synthetic data: a FHIR and X12 lakehouse, a care manager app, a readmission model, a claims denial agent and a notes-to-FHIR extractor.</p>
+        <span class="go">See the work →</span>
+      </a>
+      <a href="approach.html">
+        <span class="n">02 · Approach</span>
+        <h3>How I work</h3>
+        <p>Three principles from clinical trials, applied to data and AI.</p>
+        <span class="go">Read the approach →</span>
+      </a>
+      <a href="journey.html">
+        <span class="n">03 · Journey</span>
+        <h3>From hospital floors to AI</h3>
+        <p>Five stages, from hospital management to healthcare AI.</p>
+        <span class="go">Follow the journey →</span>
+      </a>
+      <a href="experience.html">
+        <span class="n">04 · Experience</span>
+        <h3>Roles and credentials</h3>
+        <p>10+ years across TCS, Health Care Service Corporation and Edify Data Science, plus certifications and education.</p>
+        <span class="go">View experience →</span>
+      </a>
+      <a href="contact.html">
+        <span class="n">05 · Contact</span>
+        <h3>Let's talk</h3>
+        <p>Open to Healthcare AI Solutions Architect and Forward Deployed Engineer roles.</p>
+        <span class="go">Get in touch →</span>
+      </a>
+    </nav>
   </section>
-
-  <!-- ===== Principles ===== -->
-  <section class="block wrap" id="principles" aria-labelledby="pr-title">
-    <div class="head">
-      <div>
-        <div class="kicker">Approach</div>
-        <h2 id="pr-title">How I <em>work</em></h2>
-      </div>
-      <p>Habits from clinical trials, applied to modern data and AI.</p>
-    </div>
-    <div class="principles">
-      <div class="principle">
-        <blockquote>A number is only useful if you can prove it is right.</blockquote>
-        <p>Clinical trials taught me to validate everything. I build quality gates, reconciliations and test cases into every pipeline.</p>
-      </div>
-      <div class="principle">
-        <blockquote>Measure the AI before you trust it.</blockquote>
-        <p>Every model and agent I build ships with an evaluation set, so accuracy, fairness and cost are numbers, not opinions.</p>
-      </div>
-      <div class="principle">
-        <blockquote>Build for the person who acts on it.</blockquote>
-        <p>A care manager at 8 a.m. needs a ranked list and a reason, not another chart. I design from their workflow backwards.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Journey ===== -->
-  <section class="block wrap" id="journey" aria-labelledby="jr-title">
-    <div class="head">
-      <div>
-        <div class="kicker">Journey</div>
-        <h2 id="jr-title">From hospital floors to <em>AI platforms</em></h2>
-      </div>
-      <p>I didn't come to healthcare from software. I came to software from healthcare, and that's what shapes how I build.</p>
-    </div>
-    <ol class="journey">
-      <li><span class="stage">Stage 1</span><h3>Hospital management</h3><p>Postgraduate study in how hospitals run: operations, quality and patient flow.</p></li>
-      <li><span class="stage">Stage 2</span><h3>Medical informatics research</h3><p>Mixed-methods research at Nizam's Institute of Medical Sciences, Hyderabad.</p></li>
-      <li><span class="stage">Stage 3</span><h3>Clinical trials data</h3><p>5+ years as a clinical SAS programmer, where accuracy is not optional.</p></li>
-      <li><span class="stage">Stage 4</span><h3>Cloud data engineering</h3><p>5+ years building Azure, Fabric and Databricks pipelines in insurance and enterprise settings, under HIPAA and GDPR.</p></li>
-      <li><span class="stage">Now</span><h3>Healthcare AI</h3><p>Machine learning, generative AI and agents that care teams can trust.</p></li>
-    </ol>
-  </section>
-
-  <!-- ===== Experience ===== -->
-  <section class="block wrap" id="experience" aria-labelledby="ex-title">
-    <div class="head">
-      <div>
-        <div class="kicker">Experience</div>
-        <h2 id="ex-title">Where I've <em>worked</em></h2>
-      </div>
-      <p>10+ years across healthcare, insurance and enterprise data, from clinical trials to real-time analytics.</p>
-    </div>
-    <div class="cv">
-      <ol class="roles">
-        <li>
-          <div class="when">2025 – now</div>
-          <div>
-            <h3>Data Engineer</h3>
-            <div class="org">Tata Consultancy Services</div>
-            <p>Build and operate Microsoft Fabric and Azure Data Factory pipelines for a large enterprise analytics program, including Real-Time Intelligence, deployments and GDPR-compliant data handling.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">Earlier</div>
-          <div>
-            <h3>Healthcare data</h3>
-            <div class="org">Health Care Service Corporation</div>
-            <p>Worked with health insurance data under HIPAA standards.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">Earlier</div>
-          <div>
-            <h3>Clinical SAS Programmer, then Data Engineer</h3>
-            <div class="org">Edify Data Science</div>
-            <p>Programmed and validated clinical trial datasets and outputs in SAS, then moved into data engineering.</p>
-          </div>
-        </li>
-      </ol>
-      <div class="creds">
-        <div class="card">
-          <h3>Certifications</h3>
-          <ul>
-            <li><strong>DP-700</strong><span>Microsoft Fabric Data Engineer</span></li>
-            <li><strong>Databricks</strong><span>Generative AI Engineer</span></li>
-            <li><strong>Claude Associate</strong><span>Anthropic</span></li>
-            <li><strong>SAS Certified Base Programmer</strong><span>SAS Institute</span></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Education</h3>
-          <ul>
-            <li><strong>Postgraduate, Hospital Management</strong></li>
-            <li><strong>Postgraduate, Health Informatics</strong></li>
-            <li><strong>Research thesis</strong><span>Medical informatics, NIMS Hyderabad</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact ===== -->
-  <div class="wrap">
-    <section class="contact" id="contact" aria-labelledby="ct-title">
-      <div class="kicker" style="color:var(--gold)">Contact</div>
-      <h2 id="ct-title">Let's build healthcare that runs on <em>good data.</em></h2>
-      <p>I'm open to Healthcare AI Solutions Architect and Forward Deployed Engineer roles at health systems and health-tech companies.</p>
-      <div class="actions">
-        <a class="btn gold" href="https://github.com/vishnureddypoola">GitHub</a>
-        <!-- TODO: <a class="btn ghost" href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a> -->
-        <!-- TODO: <a class="btn ghost" href="mailto:you@example.com">you@example.com</a> -->
-      </div>
-    </section>
-  </div>
+  <div style="height:96px"></div>
 
 </main>
 
@@ -577,7 +145,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
     <span>All project data is synthetic. No real patient data is used.</span>
   </div>
 </footer>
-
 <script>
 /* Hero data-flow: scattered raw records drift right, get sorted into lanes, and turn bronze, silver, then gold. */
 (function () {
