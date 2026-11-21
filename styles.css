@@ -248,3 +248,16 @@ main.page section.block:first-child { padding-top: 72px; }
 .shloka figcaption { margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); position: relative; }
 .shloka-light { margin-bottom: 48px; }
 @media (max-width: 620px) { .shloka { padding: 34px 22px; } .shloka .translit { font-size: 16px; } }
+
+/* ---------- Education ---------- */
+.explore a.wide { grid-column: 1 / -1; }
+.degrees { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.degree { display: grid; grid-template-columns: 160px 1fr; gap: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 30px 30px 28px; }
+.degree.current { border-color: var(--gold); box-shadow: inset 4px 0 0 var(--gold); }
+.degree .yr { font-family: var(--font-display); font-size: 24px; line-height: 1.2; }
+.degree .yr span { display: block; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-top: 6px; }
+.degree .level { font-family: var(--font-mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+.degree h3 { font-family: var(--font-display); font-size: 30px; font-weight: 500; margin: 6px 0 2px; }
+.degree .school { font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.degree p { margin: 0 0 14px; color: var(--muted); max-width: 66ch; }
+@media (max-width: 620px) { .degree { grid-template-columns: 1fr; gap: 8px; padding: 22px; } .degree .yr span { display: inline; margin-left: 8px; } .explore a.wide { grid-column: auto; } }
