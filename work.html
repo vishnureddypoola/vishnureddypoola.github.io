@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Vishnu Poola</title>
+<meta name="description" content="CascadeCare: five connected healthcare data and AI projects by Vishnu Poola.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="index.html">Vishnu <em>Poola</em></a>
+    <ul>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="approach.html">Approach</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top" class="page">
+  <!-- ===== Work (verb) ===== -->
+  <section class="block wrap" id="work" aria-labelledby="verb-title">
+    <div class="head">
+      <div>
+        <div class="kicker">Work, the verb</div>
+        <h2 id="verb-title">What I <em>do</em></h2>
+      </div>
+      <p>Four kinds of work, one goal: healthcare data that is correct, explainable and used. Each one is backed by a project below.</p>
+    </div>
+    <div class="verbs">
+      <article class="verb">
+        <span class="n">01 · Engineer</span>
+        <h3>Pipelines</h3>
+        <p>Medallion lakehouses that parse FHIR and X12, match patients across systems, and stop bad data before it reaches a report.</p>
+        <span class="tools">Fabric · PySpark · Delta</span>
+      </article>
+      <article class="verb">
+        <span class="n">02 · Predict</span>
+        <h3>Models</h3>
+        <p>Clinical risk models with leakage-safe features, plain-English explanations and fairness checks across patient groups.</p>
+        <span class="tools">Databricks · MLflow · SHAP</span>
+      </article>
+      <article class="verb">
+        <span class="n">03 · Automate</span>
+        <h3>Agents</h3>
+        <p>AI agents that gather evidence through tools, cite every fact, and leave the final decision to a person.</p>
+        <span class="tools">LangGraph · MCP · RAG</span>
+      </article>
+      <article class="verb">
+        <span class="n">04 · Deliver</span>
+        <h3>Decision tools</h3>
+        <p>Dashboards and apps that rank the work for today and record what people did, so outcomes can be measured.</p>
+        <span class="tools">Power BI · Fabric Apps</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Work (noun) ===== -->
+  <section class="block wrap" aria-labelledby="noun-title">
+    <div class="head">
+      <div>
+        <div class="kicker">Work, the noun</div>
+        <h2 id="noun-title">What I'm <em>building</em></h2>
+      </div>
+      <p>Five projects for CascadeCare, a fictional regional health system. They share one lakehouse and one set of synthetic patients, so together they work like a real healthcare AI platform.</p>
+    </div>
+
+    <div class="cascade">
+      <div>
+        <h3>The CascadeCare platform</h3>
+        <p>Synthetic clinical and claims data flows into one governed lakehouse. Every other project reads from its Gold layer, and the readmission model writes its scores back.</p>
+        <p class="mono" style="font-size:13px;color:var(--gold);margin:0">100% synthetic data (Synthea) · no real patient data</p>
+      </div>
+      <svg viewBox="0 0 560 250" role="img" aria-label="Synthea data flows into the Fabric lakehouse, which feeds the care manager app, readmission model, denial agent and notes extractor.">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93abb7"/></marker></defs>
+        <g fill="none" stroke="#93abb7" stroke-width="1.3">
+          <path d="M112 125H146" marker-end="url(#ar)"/>
+          <path d="M296 125H322M322 31V219"/>
+          <path d="M322 31H346" marker-end="url(#ar)"/><path d="M322 94H346" marker-end="url(#ar)"/>
+          <path d="M322 157H346" marker-end="url(#ar)"/><path d="M322 219H346" marker-end="url(#ar)"/>
+        </g>
+        <rect x="4" y="98" width="108" height="54" rx="8" fill="#0f2735" stroke="#2a4656"/>
+        <text x="58" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="#e8f1f3">Synthea</text>
+        <text x="58" y="139" text-anchor="middle" font-size="11" fill="#93abb7">FHIR + claims</text>
+        <rect x="148" y="72" width="148" height="106" rx="10" fill="#0f2735" stroke="#d9b45a" stroke-width="1.5"/>
+        <text x="222" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#e8f1f3">P1 Lakehouse</text>
+        <rect x="164" y="112" width="36" height="10" rx="3" fill="#c07a43"/><rect x="204" y="112" width="36" height="10" rx="3" fill="#aebbc4"/><rect x="244" y="112" width="36" height="10" rx="3" fill="#d9b45a"/>
+        <text x="222" y="150" text-anchor="middle" font-size="11" fill="#93abb7">Bronze · Silver · Gold</text>
+        <text x="222" y="166" text-anchor="middle" font-size="11" fill="#93abb7">quality gate</text>
+        <g font-size="12.5" fill="#e8f1f3" font-weight="600">
+          <rect x="348" y="10" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="36">P2 Care Manager</text>
+          <rect x="348" y="73" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="99">P3 Readmission model</text>
+          <rect x="348" y="136" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="162">P4 Denial appeal agent</text>
+          <rect x="348" y="198" width="206" height="42" rx="8" fill="#0f2735" stroke="#2a4656"/><text x="362" y="224">P5 Notes to FHIR</text>
+        </g>
+      </svg>
+    </div>
+
+    <article class="project">
+      <div class="idx">01</div>
+      <div>
+        <h3>FHIR and X12 claims lakehouse</h3>
+        <div class="tagline">Two languages of healthcare, one source of truth.</div>
+        <p>Parses FHIR R4 bundles and X12 837/835 claims, matches each patient across clinical and billing records, and quarantines bad records through config-driven rules. If more than 5% of records fail, the pipeline stops before Gold and raises an alert.</p>
+        <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">PySpark</span><span class="tag">FHIR R4</span><span class="tag">X12 EDI</span><span class="tag">Data quality</span></div>
+      </div>
+      <div class="side">
+        <span class="pill live">In progress</span>
+        <dl><dt>Target</dt><dd>Dec 2026</dd><dt>Proves</dt><dd>Interoperability, quality engineering</dd></dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="idx">02</div>
+      <div>
+        <h3>Diabetes Care Manager</h3>
+        <div class="tagline">A dashboard shows the problem. An app lets someone fix it.</div>
+        <p>An executive Power BI report on HbA1c control and claim denials, plus a Fabric App that ranks diabetic patients for outreach, explains why each one is on the list, and records every call back into the KPIs.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Fabric Apps</span><span class="tag">GraphQL</span><span class="tag">Row-level security</span></div>
+      </div>
+      <div class="side">
+        <span class="pill">Planned</span>
+        <dl><dt>Target</dt><dd>Jan 2027</dd><dt>Proves</dt><dd>Product thinking, closed-loop analytics</dd></dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="idx">03</div>
+      <div>
+        <h3>Diabetic readmission risk model</h3>
+        <div class="tagline">A score is only useful if a care manager knows why.</div>
+        <p>A 30-day readmission model on Databricks with point-in-time features, SHAP reasons for every patient and a fairness audit. A Lakeflow Job promotes a new model only when it passes an accuracy and fairness gate.</p>
+        <div class="tags"><span class="tag">Databricks</span><span class="tag">MLflow</span><span class="tag">Unity Catalog</span><span class="tag">SHAP</span><span class="tag">Fairlearn</span></div>
+      </div>
+      <div class="side">
+        <span class="pill">Planned</span>
+        <dl><dt>Target</dt><dd>Jan 2027</dd><dt>Proves</dt><dd>MLOps, responsible AI</dd></dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="idx">04</div>
+      <div>
+        <h3>Claims denial appeal agent</h3>
+        <div class="tagline">The agent does the paperwork. The biller makes the call.</div>
+        <p>Reads an 835 denial, gathers evidence from FHIR through an MCP server, checks the payer policy and drafts an appeal. Every fact must cite a record or policy, invented references are caught, and a person approves every letter.</p>
+        <div class="tags"><span class="tag">Agentic AI</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Evaluation</span></div>
+      </div>
+      <div class="side">
+        <span class="pill">Planned</span>
+        <dl><dt>Target</dt><dd>Feb 2027</dd><dt>Proves</dt><dd>Agent design, measurable AI</dd></dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="idx">05</div>
+      <div>
+        <h3>Clinical notes to FHIR</h3>
+        <div class="tagline">Measured against an answer key, not a feeling.</div>
+        <p>Turns free-text notes into FHIR Conditions, Medications and HbA1c results. Because the notes are generated from known data, every extraction is scored for precision, recall, negation errors and cost per note.</p>
+        <div class="tags"><span class="tag">Generative AI</span><span class="tag">Structured output</span><span class="tag">SNOMED CT</span><span class="tag">LOINC</span></div>
+      </div>
+      <div class="side">
+        <span class="pill">Planned</span>
+        <dl><dt>Target</dt><dd>Mar 2027</dd><dt>Proves</dt><dd>LLM rigor, clinical terminology</dd></dl>
+      </div>
+    </article>
+  </section>
+
+  <div class="wrap">
+    <div class="next"><span>Next</span><a href="approach.html">How I work →</a></div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vishnuvardhan Reddy Poola · vishnupoola.com</span>
+    <span>All project data is synthetic. No real patient data is used.</span>
+  </div>
+</footer>
+
+</body>
+</html>
